@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %title
+      = @name
+      = "-"
+      = @title
+  %body{bgcolor: "#f5f5f5", style: "padding: 0; margin: 0;"}
+    .centerize{align: "center", style: "width: 800px; background-color: white; margin: 0 auto; padding: 5px;"}
+      %h1= @name
+      %h2= @title
+      %p= @description
+      %img{src: @image_file, alt: @description}
+      %br
+      %br
+      .links{align: "left", style: "border: 1px solid black; width: 620px; padding: 10px;"}
+        %h3 リンク集
+        %table
+          - @data.each do |host, site|
+            %tr
+              %td
+                %a{href: "http://#{host}/", target: "_blank", title: site["title"]}= site["name"]
+              %td= site["description"]
+
+
