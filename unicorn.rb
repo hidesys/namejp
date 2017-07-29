@@ -4,7 +4,8 @@ worker_processes 2 # CPUのコア数に揃える
 working_directory @dir
 
 timeout 300
-listen 3000
+#listen 3000
+listen "#{@dir}tmp/sockets/unicorn.sock"
 
 pid "#{@dir}tmp/pids/unicorn.pid" #pidを保存するファイル
 
