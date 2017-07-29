@@ -34,11 +34,6 @@ chinko.tokyo:
   name: 東京ちんこ
   description: 「東京ちんこ」のオフィシャルオンラインショップです。
   image: named
-dankon.tokyo:
-  title: 東京より妄執をお届けします
-  name: 東京男根物語
-  description: 銘菓「東京男根物語」のオフィシャルオンラインショップです。
-  image: named
 unv.tokyo:
   title: 各大学のサークルメンバーのちんこ情報が盛り沢山！
   name: 大学サークル陰茎情報＠東京
@@ -56,9 +51,7 @@ theuniversityof.tokyo:
   image: makura
 EOS
   @data = YAML.load(data_yml)
-end
 
-get "/" do
   #ドメインがあるかのチェック
   if !@data.has_key?(request.host)
     redirect "http://xn--t8j3ba3rb.xn--ebkw96v.jp/", "存在しないドメイン"
@@ -70,5 +63,12 @@ get "/" do
   @name = site["name"]
   @image_file = "#{site["image"]}.png"
   @description = site["description"]
+end
+
+get "/" do
   haml :index
+end
+
+get "/link" do
+  haml :link
 end
