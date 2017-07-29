@@ -2,6 +2,8 @@ require "sinatra"
 require "haml"
 require "yaml"
 
+set :bind, "0.0.0.0"
+
 before do
   data_yml = <<EOS
 comicpenis.com:

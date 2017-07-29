@@ -1,4 +1,6 @@
 /vendor/bundle
 /Gemfile.lock
 *.swp
+/tmp
+/log
 
