@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: bundle exec rackup -p 3000 -o 0.0.0.0
+    volumes:
+      - .:/namejp
+    ports:
+      - "3000:3000"
